@@ -1,0 +1,114 @@
+{% include 'userhead.html' %}
+
+<section>
+        
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;">PRODUCT DETAILS</h2> 					
+                    </div>					
+                </div>
+            </div>
+</section>
+<br><br>
+
+ <div class="about">
+                <div class="container">
+							{% for i in list %}
+                    <div class="row">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="about-img">
+                                <img src="{{ MEDIA_URL }}{{i.p_image}}" alt="Image" style="height:400px;">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                           
+							
+								<address>
+											
+									<strong>Product Name:</strong> <span>{{i.iname}}</span><br>
+									<strong>weight:</strong> <span>{{i.wght}}</span><br>
+									<strong>modal:</strong> <span>{{i.modal}}</span><br>
+									<strong>Category:</strong> <span>{{i.cname}}</span><br>
+										<strong>SubCategory:</strong> <span>{{i.scname}}</span><br>
+										<strong>stone:</strong> <span>{{i.stonedtl}}</span><br>
+					<strong>stone weight:</strong> <span>{{i.swght}}</span><br>
+					<strong>stone price:</strong> <span>{{i.sprice}}</span><br>
+					<strong>Size:</strong> <span>{{i.size}}</span><br>
+					<strong>Making charge(%):</strong> <span>{{i.mcharge}}</span><br>
+					<strong>Grand Total:</strong> <span>{{gtotal}}/-</span><br>
+									<strong>Availability:</strong> 
+												<span> 
+												{% ifequal i.qty '0' %}  <label style="color:red;"><b>"Out Of Stock"</b></label>  {% endifequal %}
+												{% ifnotequal i.qty '0' %}{{i.qty}}{% endifnotequal %} </span><br>							
+								</address>									
+							
+							
+							<div class="span5">
+							{% ifnotequal i.qty '0' %}
+								<form class="form-inline" action="/cart/">
+									<input type="hidden" name="bi" value="{{i.icode}}"/>
+									<p>&nbsp;</p>
+									<p>&nbsp;</p>
+									<label>Qty:</label>
+									<input type="number" name="qty"  min="1" max="{{i.qty}}" required >&nbsp;&nbsp;&nbsp;
+									
+												
+									<button class="btn" type="submit" style="background-color:black;color:white">ADD TO CART</button>
+									
+												
+								</form>
+								{% endifnotequal %}
+							</div>							
+					</div>
+						
+						<div class="row">
+							<div class="span9">
+							<br/>
+								<ul class="nav nav-tabs" id="myTab">
+									<h4><li class="active"><a href="#home"><b>DESCRIPTION</b></a></li></h4>
+									<li></li>
+								</ul>							 
+								<div class="tab-content">
+									<h5><div style="width:120%;background-color:#72dd78;color:white" class="tab-pane active" id="home">{{i.descp}}</div></h5>
+								
+								</div>							
+							</div>						
+							<div class="span9">	
+								<br>
+							
+							</div>
+						</div>
+                               
+                            </div>
+                        </div>
+                    </div>
+					{% endfor %}
+                </div>
+            </div>
+
+<br><br><br><br><br><br>
+<footer class="footer layout_padding">
+</footer>			
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+	  
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>

@@ -1,0 +1,221 @@
+{% include  'head.html' %}
+
+<section>
+        
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="full text_align_center heading_s1">
+					<br>
+                     <h2 style="width:100%;text-align: center;">CUSTOMER REGISTRATION</h2> 					
+                    </div>					
+                </div>
+            </div>
+</section>
+				<div class="col-md-12" style="width:1500px;">
+                    <div>
+						<div class="row">
+							<div class="col-md-12" style="width:500px;">
+								<div class="form_cont">
+
+<fieldset>
+<form action="/customeraction/" onSubmit="return check()">
+
+<table>
+
+<td>NAME</td>
+<td><input type="text" name="name" id="name" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>ADDRESS</td>
+<td><textarea type="text" name="housename" id="housename" required ></textarea></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>STREET</td>
+<td><input type="text" name="street"  id="street" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>CITY</td>
+<td><input type="text" name="city" id="city" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>DISTRICT</td>
+<td><input type="text" name="district" id="district" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>PIN CODE</td>
+<td><input type="text" name="pincode" id="pincode" required maxlength="6"></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>PHONE NUMBER</td>
+<td><input type="text" name="phno" id="phno" maxlength="10" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>EMAIL ID</td>
+<td><input type="email" name="emailid" id="emailid" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>PASSWORD</td>
+<td><input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required ></td>
+
+</tr><tr><td><br></td></tr>
+
+<td>CONFIRM PASSWORD</td>
+<td><input type="password" name="cpass" id="cpass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required ></td>
+
+</table>
+<br>
+										<div class="field center">
+									<button style="background-color:black;color:white">REGISTER</button>
+                                  </fieldset>
+                               </form>
+                           </div>
+                        </div>
+                   
+					 
+                       
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+<br><br><br>
+
+<footer class="footer layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-3 col-sm-12">
+                  <a href="index.html"><img class="img-responsive" src="/static/images/logo_footer.png" alt="#" /></a>
+               </div>
+
+               <div class="col-md-3 col-sm-12">
+                  <div class="footer_link_heading">
+                     <h3>Address</h3>
+                  </div>
+                  <div class="address_infor">
+                     <p> 
+                        <span class="icon"><img src="/static/images/location_icon.png" alt="#" /></span>
+                        <span class="addrs">104 MUMBAI, MAHARASHTRA, INDIA </span>
+                     </p>
+                  </div>
+               </div>
+
+               <div class="col-md-3 col-sm-12">
+                  <div class="footer_link_heading">
+                     <h3>Social Link</h3>
+                  </div>
+                  <div class="social_icon">
+                    <ul>
+                       <li><a href="#"><img src="/static/images/fb.png" alt="#" /></a></li>
+                       <li><a href="#"><img src="/static/images/tw.png" alt="#" /></a></li>
+                       <li><a href="#"><img src="/static/images/gp.png" alt="#" /></a></li>
+                       <li><a href="#"><img src="/static/images/in.png" alt="#" /></a></li>
+                    </ul>
+                  </div>
+               </div>
+               
+               <div class="col-md-3 col-sm-12">
+                  <div class="footer_link_heading">
+                     <h3>Newsletter</h3>
+                  </div>
+                  <div class="email_address_bottom">
+                    
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+	  
+	  
+	  
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+      <!-- end footer -->
+	  
+	  
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>
+
+
+
+<script type="text/javascript">
+    var letters=/^[a-z A-Z]+$/;
+    var numbers=/^[0-9]+$/;
+    var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    function check()
+    {
+   if(!document.getElementById("name").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter name properly');
+            return false;
+        }
+		
+		
+    else if(!document.getElementById("city").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter city properly');
+            return false;
+        }
+   else if(!document.getElementById("district").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter district properly');
+            return false;
+        }
+    else if(!document.getElementById("phno").value.match(numbers))
+        {
+            alert('Please input numeric characters only,enter phone number');
+            return false;
+        }
+	else if(document.getElementById("phno").value.length<10)
+        {
+            alert('invalid Phone number,enter phone number');
+            return false;
+        }
+    else if(!document.getElementById("pincode").value.match(numbers))
+        {
+            alert('Please input numeric characters only,enter pin number');
+            return false;
+        }
+		else if(document.getElementById("pincode").value.length<6)
+        {
+            alert('invalid pin number,enter pin number');
+            return false;
+        }
+	else if(document.getElementById("password").value!=document.getElementById("cpass").value)
+        {
+            alert('password miss match');
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }	
+</script>

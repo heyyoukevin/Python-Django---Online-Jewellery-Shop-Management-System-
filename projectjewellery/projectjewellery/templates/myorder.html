@@ -1,0 +1,101 @@
+{% include 'userhead.html' %}
+
+       <section >
+        
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;"> MY ORDERS</h2>
+                  </div>
+               </div>
+            </div>
+            <div >
+	   <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="contact-form-right">		
+{% if list %}
+                       
+	 <div class="hero row align-items-center">
+            <div class="col-md-12">
+
+<table class="table table-striped">
+							<thead>
+								<table border="1" style="width:100%;text-align:center">
+	<tr style="background-color:#72dd78;color:black;height:50px">
+
+									<th>Item Image</th>
+									<th>Item Name</th>
+									<th>Metal Weight in Grams</th>
+									<th>Todays Metal Rate per Gram</th>
+									<th>Total Metal Amount</th>
+									<th>Stone Price</th>
+									<th>Making Charge</th>
+									<th>Total Item Amount</th>
+									<th>Quantity</th>
+									<th>Grand Total</th>
+									<th>Status</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for i in list %}
+								<tr>
+									
+									<td><img alt="" src="{{ MEDIA_URL }}{{i.p_image}}" width="100px" height="100px"></td>
+									<td> {{i.iname}}</td>
+									<td> {{i.wght}}</td>
+									<td>{{i.rate}}</td>
+									<td> {{i.mprice}}</td>
+									<td> {{i.sprice}}</td>
+									<td> {{i.mcharge}}</td>
+									<td> {{i.total}}</td>
+									<td> {{i.qty}}</td>
+									<td> {{i.gtotal}}</td>
+									<td> {{i.ostatus}}</td>
+		 </tr>			  
+		{% endfor %} 
+							</tbody>
+						</table>
+			</div>
+</div>			
+						<hr/>
+						<center><p class="buttons center">				
+
+
+</div>
+{% else %}
+<br><br>
+<center>
+<h1 style="color:red"><b>NO ITEMS IN ORDER LIST </b></h1>
+</center>
+{% endif %}
+	</tbody>
+						</table>
+						
+						<hr/>
+					
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+			 <br><br><br>
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+	  
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>

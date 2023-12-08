@@ -1,0 +1,67 @@
+{% include 'userhead.html' %}
+
+
+<section class="layout_padding padding_bottom_0" style="background: #fff;">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full heading_s1">
+                     <h2 style="width: 100%;text-align: center;">PRODUCTS</h2>
+                  </div>
+                  <div class="full">
+                   <form action="/vproduct/" >
+						
+						<table border="0" cellpadding="5px">
+						<tr>
+						
+						<td><input type="text"name="srh" class="form-control" required="yes" placeholder="search" id="t1"/></td>
+						
+						<td><center><input type="submit" style="background-color:black;color:white" value="Search"/></center></td>
+						</tr>
+						</table>
+						</form>  
+					
+				</div>
+               </div>
+            </div>
+            <div class="row product_section">
+			{% for i in list %}
+               <div class="col-md-4"> 
+                  <div class="full product_blog margin_top_30">
+                   <a href="/pdetails?id={{i.icode}}">  <img src="{{ MEDIA_URL }}{{i.p_image}}" alt="#" /></a>
+                     <h3><span style="color: #72dd78 !important;">({{i.wght}})gram  </span> {{i.iname}}</h3>
+                  </div>
+               </div>
+			   {% endfor %}
+               
+               
+            </div>
+          </div>
+      </section>
+
+<footer class="footer layout_padding">
+</footer>	  
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+	  
+	  
+	  
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>

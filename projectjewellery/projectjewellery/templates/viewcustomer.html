@@ -1,0 +1,79 @@
+{% include 'adminhead.html' %}
+
+<section >
+        
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;">CUSTOMER DETAILS</h2>
+                  </div>
+               </div>
+            </div>
+      <center>
+
+<table border="1" style="width:90%;text-align:center">
+<tr style="background-color:#72dd78;color:black;height:30px">
+<th>Customer Id</th>
+<th>Name</th>
+<th>House Name</th>
+<th>Street</th>
+<th>City</th>
+<th>District</th>
+<th>Pin Code</th>
+<th>Phone Number</th>
+<th>Email Id</th>
+<th colspan="2">Action</th>
+</tr>
+
+{% for i in list %}
+
+<tr>
+<td>{{i.cid}}</td>
+<td>{{i.ctname}}</td>
+<td>{{i.chname}}</td>
+<td>{{i.street}}</td>
+<td>{{i.city}}</td>
+<td>{{i.dist}}</td>
+<td>{{i.pin}}</td>
+<td>{{i.phno}}</td>
+<td>{{i.eml}}</td>
+{% ifequal i.status 'Not-Active' %}
+<td><a style="color:green;" href="/uactivate?n={{i.cid}}&st=Active&st1=true">Activate </a></td>
+{% endifequal %}
+{% ifequal i.status 'Active' %}
+<td><a  style="color:red;" href="/uactivate?n={{i.cid}}&st=Not-Active&st1=false">Deactivate </a></td>
+{% endifequal %}
+</tr>
+
+{% endfor %}
+
+</table>
+
+      </section>
+	  
+<br><br><br><br><br><br><br><br><br>
+
+<footer class="footer layout_padding">
+</footer>
+	 
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>

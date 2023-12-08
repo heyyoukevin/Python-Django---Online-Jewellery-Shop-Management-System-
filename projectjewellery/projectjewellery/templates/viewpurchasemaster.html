@@ -1,0 +1,31 @@
+<html>
+
+<body>
+
+<table border="1">
+
+<tr>
+<th>Purchase Master Id</th>
+<th>Vendor Id</th>
+<th>Date of Purchase</th>
+<th>Staff Id</th>
+<th>Total Quantity</th>
+</tr>
+
+{% for i in list %}
+
+<tr>
+<td>{{i.pid}}</td>
+<td>{{i.vid}}</td>
+<td>{{i.dop}}</td>
+<td>{{i.stfid}}</td>
+<td>{{i.tqty}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

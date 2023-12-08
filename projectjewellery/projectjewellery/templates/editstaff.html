@@ -1,0 +1,158 @@
+{% include 'adminhead.html' %}
+
+
+      <section >
+        
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;">STAFF</h2>
+                  </div>
+               </div>
+            </div>
+            <div >
+               <div class="col-md-12">
+                  <div>
+                     <div class="row">
+					         <div class="col-md-4">
+                           <div class="form_cont">
+                             
+
+                                  <fieldset>
+								  
+<form action="/updatestaff/">
+{% for i in list %}
+<table>
+
+<td>STAFF ID</td>
+<td><input type="text" name="stfid" value="{{i.stfid}}" readonly></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>NAME</td>
+<td><input type="text" name="name" id="name" value="{{i.stfname}}"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>HOUSE NAME</td>
+<td><input type="text" name="housename" id="housename" value="{{i.shname}}"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>STREET</td>
+<td><input type="text" name="street" id="street" value="{{i.street}}"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>CITY</td>
+<td><input type="text" name="city" id="city" value="{{i.city}}"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>DISTRICT</td>
+<td><input type="text" name="district" id="district" value="{{i.dist}}"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>PIN CODE</td>
+<td><input type="text" name="pincode" id="pincode" value="{{i.pin}}" maxlength="6"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>STATE</td>
+<td><input type="text" name="state" id="state" value="{{i.state}}"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>PHONE NUMBER</td>
+<td><input type="text" name="phno" id="phno" maxlength="10" value="{{i.phno}}"></td>
+
+</table>
+
+<br><br>
+<input type="submit" value="ADD">
+
+</form>
+{% endfor %}
+
+ <footer class="footer layout_padding">
+      
+      </footer>
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>
+
+<script type="text/javascript">
+    var letters=/^[a-z A-Z]+$/;
+    var numbers=/^[0-9]+$/;
+    function check()
+    {
+   if(!document.getElementById("name").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter name properly');
+            return false;
+        }
+   else if(!document.getElementById("city").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter city properly');
+            return false;
+        }
+   else if(!document.getElementById("district").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter district properly');
+            return false;
+        }
+   else if(!document.getElementById("state").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter state properly');
+            return false;
+        }
+    else if(!document.getElementById("phno").value.match(numbers))
+        {
+            alert('Please input numeric characters only,enter phone number');
+            return false;
+        }
+		else if(document.getElementById("phno").value.length<10)
+        {
+            alert('invalid Phone number,enter phone number');
+            return false;
+        }
+    else if(!document.getElementById("pincode").value.match(numbers))
+        {
+            alert('Please input numeric characters only,enter pin number');
+            return false;
+        }
+        else if(document.getElementById("pincode").value.length<6)
+        {
+            alert('invalid pin number,enter pin number');
+            return false;
+        }
+
+        else
+        {
+            return true;
+        }
+    }	
+</script>     

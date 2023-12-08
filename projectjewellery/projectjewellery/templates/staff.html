@@ -1,0 +1,183 @@
+{% include 'adminhead.html' %}
+
+      <section >
+        
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;">STAFF</h2>
+                  </div>
+               </div>
+            </div>
+            <div >
+			
+			<a href="/viewstaff/" ><h4 style="width: 20%;padding-right:20px;padding-left:30px;color:red;background-color:black;">VIEW STAFFS</h4></a> 
+               <div class="col-md-12" style="width:1500px;">
+                  <div>
+                     <div class="row">
+					         <div class="col-md-12" style="width:500px;">
+                           <div class="form_cont">
+                             
+
+                                  <fieldset>
+<form action="/staffaction/" onSubmit="return check()">
+
+<table>
+
+<td>NAME</td>
+<td><input type="text" name="name" id="name" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>HOUSE NAME</td>
+<td><input type="text" name="housename" id="housename" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>STREET</td>
+<td><input type="text" name="street" id="street" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>CITY</td>
+<td><input type="text" name="city" id="city" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>DISTRICT</td>
+<td><input type="text" name="district" id="district" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>PIN CODE</td>
+<td><input type="text" name="pincode" id="pincode" required maxlength="6"></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>STATE</td>
+<td><input type="text" name="state" id="state" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>PHONE NUMBER</td>
+<td><input type="text" name="phno" id="phno" maxlength="10" required ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>EMAIL ID</td>
+<td><input type="email" name="emailid" id="emailid" required  ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>PASSWORD</td>
+<td><input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required ></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>CONFIRM PASSWORD</td>
+<td><input type="password" name="cpass" id="cpass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required ></td>
+
+</table>
+<br>
+                                     <div class="field center">
+                                       <button style="background-color:black;color:white">ADD</button>
+                                  </fieldset>
+                               </form>
+                           </div>
+                        </div>
+
+						
+                
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+<br><br><br><br><br><br>
+<footer class="footer layout_padding">
+</footer>
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>
+
+<script type="text/javascript">
+    var letters=/^[a-z A-Z]+$/;
+    var numbers=/^[0-9]+$/;
+    var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    function check()
+    {
+   if(!document.getElementById("name").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter name properly');
+            return false;
+        }
+   else if(!document.getElementById("city").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter city properly');
+            return false;
+        }
+   else if(!document.getElementById("district").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter district properly');
+            return false;
+        }
+   else if(!document.getElementById("state").value.match(letters))
+        {
+              
+            alert('Please input alphabet characters only,enter state properly');
+            return false;
+        }
+    else if(!document.getElementById("phno").value.match(numbers))
+        {
+            alert('Please input numeric characters only,enter phone number');
+            return false;
+        }
+		else if(document.getElementById("phno").value.length<10)
+        {
+            alert('invalid Phone number,enter phone number');
+            return false;
+        }
+    else if(!document.getElementById("pincode").value.match(numbers))
+        {
+            alert('Please input numeric characters only,enter pin number');
+            return false;
+        }
+        else if(document.getElementById("pincode").value.length<6)
+        {
+            alert('invalid pin number,enter pin number');
+            return false;
+        }
+	else if(document.getElementById("password").value!=document.getElementById("cpass").value)
+        {
+            alert('password miss match');
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }	
+</script>     

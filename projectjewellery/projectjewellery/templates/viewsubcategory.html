@@ -1,0 +1,61 @@
+{% include 'adminhead.html' %}
+
+<section >
+        
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;">SUBCATEGORY DETAILS</h2>
+                  </div>
+               </div>
+            </div>
+      <center>
+
+<table border="1" style="width:90%;text-align:center">
+<tr style="background-color:#72dd78;color:black;height:30px">
+<th>Sub Category Id</th>
+<th>Sub Category Name</th>
+<th>Description</th>
+<th colspan="2">Action</th>
+</tr>
+
+{% for i in list %}
+
+<tr>
+<td>{{i.scatid}}</td>
+<td>{{i.scname}}</td>
+<td>{{i.descp}}</td>
+<td><a  style="color:red;" href="/delsubcat?n={{i.scatid}}">Delete </a></td>
+<td><a  style="color:green;" href="/editsubcat?n={{i.scatid}}">Edit </a></td>
+</tr>
+
+{% endfor %}
+
+</table>
+                           
+      </section>
+	  
+<br><br><br><br><br><br>
+<footer class="footer layout_padding">
+</footer>	  
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>

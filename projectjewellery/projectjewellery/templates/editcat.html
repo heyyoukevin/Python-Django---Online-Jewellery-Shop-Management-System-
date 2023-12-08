@@ -1,0 +1,70 @@
+{% include 'adminhead.html' %}
+
+<section >
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="full text_align_center heading_s1">
+            <h2 style="width: 100%;text-align: center;">EDIT CATEGORY</h2>
+            </div>
+        </div>
+    </div>
+	<div class="col-md-12" style="width:1500px;">
+        <div class="row">
+			<div class="col-md-12" style="width:500px;">
+                <div class="form_cont">
+								  
+<form action="/updatecat/">
+{% for i in list %}
+
+<table>
+
+<tr><tr><tr><tr><tr>
+
+<td>CATEGORY NAME</td>
+<td><input type="text" name="catname" value="{{i.cname}}" readonly></td>
+
+<tr><tr><tr><tr><tr>
+
+<td>DESCRIPTION</td>
+<td><input type="text" name="description" value="{{i.descp}}"></td>
+
+</table>
+
+<br>
+					<div class="field center">
+                    <button style="background-color:black;color:white">EDIT</button>
+</form>
+{% endfor %}
+					</div>
+				</div>	
+            </div>
+        </div>
+    </div>
+</section>
+	  
+<br><br><br><br><br><br>
+
+<footer class="footer layout_padding">
+</footer>
+
+<div class="cpy">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+	  
+	  
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>

@@ -1,0 +1,98 @@
+{% include 'adminhead.html' %}
+
+
+       <section >
+        
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="full text_align_center heading_s1">
+                     <h2 style="width: 100%;text-align: center;">ASSIGN ORDERS</h2>
+                  </div>
+               </div>
+            </div>
+            <div >
+
+    <div class="contact-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <div class="contact-form-right">
+                        
+					<table border="1" style="width:100%;text-align:center">
+
+								<thead>
+								<tr style="background-color:#72dd78;color:black;height:50px">
+									<th>Item Image</th>
+									<th>Item Details</th>
+									<th>Quantity</th>
+									<th>Customer Name</th>
+									<th>Customer Phone Number</th>
+									<th>Customer Address</th>
+									<th>Assign Staff</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+									{% for i in order %}
+								<form action="/assign/">
+								<tr>									
+									<td><img alt="" src=" {{ MEDIA_URL }}{{i.p_image}}" width="150px" height="150px"></td>
+									<td>Item Code:{{i.icode}}<br>
+									Item Name:{{i.iname}}<br>
+									Metal weight:{{i.wght}}<br>
+									Rate per gram:{{i.rate}}<br>
+									stone price:{{i.sprice}}<br>
+									Metal Amount:{{i.mprice}}<br>
+									making charge:{{i.mcharge}}<br>
+									total amount:{{i.total}}</td>
+									<td> {{i.qty}}</td>
+									<td> {{i.cname}}</td>
+									<td> {{i.cphno}}</td>
+									<td> {{i.chouse}},{{i.ccity}},{{i.cdist}},{{i.cpin}}</td>
+									<td><select name="st">
+									{% for j in staff %}
+									<option value="{{j.stfid}}">{{j.stfname}}    </option>
+									{% endfor %}
+									</select></td><input type="hidden" name="oid" value="{{i.oid}}"/>
+									<td><input style="background-color:black;color:white" type="submit" value="Assign"/></td>
+								</tr>	
+								</form>		 
+									{% endfor %}
+								</tbody>
+						
+					</table>
+				 
+						 </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+
+<br><br><br><br><br><br>
+
+<footer class="footer layout_padding">
+</footer>
+
+      <div class="cpy">
+        <div class="container">
+           <div class="row">
+             <div class="col-md-12">
+               <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+             </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- end footer -->
+      <!-- Core JavaScript
+         ================================================== -->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/tether.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/parallax.js"></script>
+      <script src="/static/js/animate.js"></script>
+      <script src="/static/js/ekko-lightbox.js"></script>
+      <script src="/static/js/custom.js"></script>
+   </body>
+</html>
